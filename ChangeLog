@@ -1,9 +1,16 @@
+2009-12-12  Ethan A Merritt  <merritt@u.washington.edu>
+
+	* docs/plotstyles.gnu demo/bldg.png demo/barchart_art.dem Makefile.am.in
+	New demo showing 
+	a) input of png image using binary filetype=png
+	b) rescaling rectangular images to act as plot elements
+
 2009-12-11  Ethan A Merritt  <merritt@u.washington.edu>
 
 	* src/graphics.c (boundary):  Tweak auto-placement of plot borders so
-	that it is closer to that used prior to version 4.2.4.  This make the
-	right margin slightly wider than in 4.2.6, and the left margin slightly
-	narrower.
+	that it is closer to what was used prior to version 4.2.4.  This makes
+	the right margin slightly wider than in 4.2.6, and the left margin
+	slightly narrower.
 
 2009-12-08  Ethan A Merritt  <merritt@u.washington.edu>
 
