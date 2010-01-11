@@ -112,6 +112,23 @@ plot '../demo/silver.dat' u 1:2:($3+$1/50.) w filledcurves above title 'above' l
                '' u 1:2 w lines lt -1 lw 1 title 'curve 1', \
                '' u 1:($3+$1/50.) w lines lt -1 lw 3 title 'curve 2'
 #
+# Boxplot
+# =======
+#
+set output 'figure_boxplot.pdf'
+reset
+set style fill solid 0.25 border -1
+set yrange [-15:165]
+set xrange [0.5:2.0]
+set xtics ("A" 1, "B" 1.5) scale 0
+set ytics nomirror
+set border 2
+set lmargin at screen 0.3
+unset key
+set style data boxplot
+plot '../demo/silver.dat' using (1):2:(.25) ps 0.3, \
+     '' using (1.5):(5*$3):(.25) ps 0.3
+#
 # Dots
 # ====
 #
@@ -294,10 +311,10 @@ set key box
 
 set xtics   ("NE" 72.0, "S" 42.0, "Downtown" 12.0, "Suburbs" 122.0)  scale 0.0
 
-plot 'bldg.png' binary filetype=png origin=(0,0)  dx=0.5 dy=1.5 with rgbimage notitle, \
-     'bldg.png' binary filetype=png origin=(60,0) dx=0.5 dy=1 with rgbimage notitle, \
-     'bldg.png' binary filetype=png origin=(30,0) dx=0.5 dy=0.7 with rgbimage notitle, \
-     'bldg.png' binary filetype=png origin=(110,0) dx=0.5 dy=0.35 with rgbimage notitle
+plot '../demo/bldg.png' binary filetype=png origin=(0,0)  dx=0.5 dy=1.5 with rgbimage notitle, \
+     '../demo/bldg.png' binary filetype=png origin=(60,0) dx=0.5 dy=1 with rgbimage notitle, \
+     '../demo/bldg.png' binary filetype=png origin=(30,0) dx=0.5 dy=0.7 with rgbimage notitle, \
+     '../demo/bldg.png' binary filetype=png origin=(110,0) dx=0.5 dy=0.35 with rgbimage notitle
 
 #
 #
