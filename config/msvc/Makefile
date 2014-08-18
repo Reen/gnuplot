@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.24 2014/08/15 19:25:13 sfeam Exp $
+# $Id: Makefile,v 1.25 2014/08/18 03:49:06 sfeam Exp $
 #
 # GNUPLOT Makefile Microsoft Visual C++ 2005 or newer
 
@@ -455,8 +455,8 @@ doc2html.exe: $(D)windows\doc2html.c $(D)termdoc.c $(D)xref.c version.obj $(CORE
 
 # make binary demo files
 # WINDOWS_NO_GUI makes sure that wtext.h does not redefine fread() etc.
-$(M)bf_test.exe : $(S)\\bf_test.c alloc.obj
-	$(CC) $(CFLAGS) /F 5000 /W1 /DWINDOWS_NO_GUI /Fe$(M)bf_test.exe $(S)\\bf_test.c alloc.obj
+$(M)bf_test.exe : $(S)\\bf_test.c
+	$(CC) $(CFLAGS) /F 5000 /W1 /DWINDOWS_NO_GUI /Fe$(M)bf_test.exe $(S)\\bf_test.c
 	cd $(M)
 	bf_test
 	cd ..\\config\\msvc
